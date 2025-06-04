@@ -1,1 +1,1 @@
-print("hello world from SIUE")
+print("hello siue")
