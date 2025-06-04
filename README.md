@@ -4,4 +4,4 @@ Hello from SIUE
 
 ### Some more information
 
-hello from CS
+hello from CS SIUE
