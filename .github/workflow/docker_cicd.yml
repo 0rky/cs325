@@ -1,0 +1,30 @@
+name: Python CI (Pull)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-in-container:
+    runs-on: ubuntu-latest
+    
+    # This is the magic:
+    # 1. It pulls the image.
+    # 2. It runs all 'run:' steps inside this container.
+    container:
+      image: orky/pyt:v0.1
+      # The OS and all dependencies (pytest) are already in this image!
+
+    steps:
+      # Step 1: Check out code
+      # This checks out your code and mounts it into the running container.
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # Step 2: Run tests!
+      # We don't need to build or install dependencies.
+      # We just run the test command directly.
+      - name: Run tests in container
+        run: pytest
