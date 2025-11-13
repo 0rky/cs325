@@ -8,7 +8,7 @@ def subtract(x, y):
 
 def multiply(x, y):
     """Multiplies two numbers"""
-    return x * 2*y
+    return x * y
 
 def divide(x, y):
     """Divides two numbers. Raises ValueError on division by zero."""
