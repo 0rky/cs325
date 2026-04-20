@@ -21,6 +21,10 @@ on:
 jobs:
   test-in-container:
     runs-on: ubuntu-latest
+    
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     container:
       image: orky/pyt:v0.1
       # all dependencies (pytest) are already in this docker image hosted as public image in YOUR Docker Hub account
